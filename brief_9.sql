@@ -22,7 +22,7 @@ CREATE table bus(
 );
 
 CREATE TABLE Route (
-    routeID INT PRIMARY KEY,
+    routeID INT PRIMARY KEY AUTO_INCREMENT,
     startCityID INT,
     endCityID INT,
     distance VARCHAR(255),
@@ -30,8 +30,6 @@ CREATE TABLE Route (
     FOREIGN KEY (startCityID) REFERENCES City(cityID),
     FOREIGN KEY (endCityID) REFERENCES City(cityID),
     CONSTRAINT CHECKER CHECK (startCityID != endCityID)
-);
-
 );
 
 CREATE table schedule(
